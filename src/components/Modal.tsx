@@ -17,8 +17,8 @@ type AddExpenseModalProps = {
 
 export default function AddExpenseModal({}: AddExpenseModalProps) {
   const [name, setName] = useState<string>("");
-  const [amount, setAmount] = useState<string | number>(0);
-  const [category, setCategory] = useState<string | null>(null);
+  // const [amount, setAmount] = useState<string | number>(0);
+  // const [category, setCategory] = useState<string | null>(null);
   const [opened, { open, close }] = useDisclosure(false);
 
   // const handleSubmit = () => {};
@@ -30,14 +30,14 @@ export default function AddExpenseModal({}: AddExpenseModalProps) {
   const inputnameOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
   };
-  const inputAmountOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setAmount(event.target.value);
-  };
-  const inputCategoryOnChange = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    setCategory(event.target.value);
-  };
+  // const inputAmountOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   setAmount(event.target.value);
+  // };
+  // const inputCategoryOnChange = (
+  //   event: React.ChangeEvent<HTMLInputElement>
+  // ) => {
+  //   setCategory(event.target.value);
+  // };
 
   // หากต้องการแปง type string เป็น type number สามารถดูตัวอย่างนี้ได้
   let val_number: number = Number("500.0");
@@ -70,7 +70,7 @@ export default function AddExpenseModal({}: AddExpenseModalProps) {
             error="Amount is required"
             placeholder="0"
             //onChange={inputAmountOnChange}
-            value={amount}
+            // value={amount}
           />
           <Select
             label="category"
@@ -78,7 +78,7 @@ export default function AddExpenseModal({}: AddExpenseModalProps) {
             data={["Food", "Transpot", "Entertainment"]}
             error="category is required"
             //onChange={inputCategoryOnChange}
-            value={category}
+            // value={category}
           />
         </Modal>
         <Button onClick={open}>Add Expense Traacker</Button>
